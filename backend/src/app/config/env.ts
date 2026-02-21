@@ -4,12 +4,20 @@ dotenv.config();
 
 interface IEnvConfig {
   PORT: string;
-  DB_URL: string;
+  MONGO_URI: string;
   NODE_ENV: "development" | "production";
+  JWT_ACCESS_SECRET: string;
+  JWT_ACCESS_EXPIRES: string;
 }
 
 const loadEnvVariables = (): IEnvConfig => {
-  const requiredEnvVars: string[] = ["PORT", "DB_URL", "NODE_ENV"];
+  const requiredEnvVars: string[] = [
+    "PORT",
+    "MONGO_URI",
+    "NODE_ENV",
+    "JWT_ACCESS_SECRET",
+    "JWT_ACCESS_EXPIRES",
+  ];
 
   requiredEnvVars.forEach((key) => {
     if (!process.env[key]) {
@@ -19,8 +27,10 @@ const loadEnvVariables = (): IEnvConfig => {
 
   return {
     PORT: process.env.PORT as string,
-    DB_URL: process.env.DB_URL as string,
+    MONGO_URI: process.env.MONGO_URI as string,
     NODE_ENV: process.env.NODE_ENV as "development" | "production",
+    JWT_ACCESS_SECRET: process.env.JWT_ACCESS_SECRET as string,
+    JWT_ACCESS_EXPIRES: process.env.JWT_ACCESS_EXPIRES as string,
   };
 };
 
