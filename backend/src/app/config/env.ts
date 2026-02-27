@@ -12,6 +12,11 @@ interface IEnvConfig {
   EMAIL_FROM: string;
   EMAIL_FROM_NAME: string;
   CLIENT_URL: string;
+  CLOUDINARY: {
+    CLOUDINARY_CLOUD_NAME: string;
+    CLOUDINARY_API_KEY: string;
+    CLOUDINARY_API_SECRET: string;
+  };
 }
 
 const loadEnvVariables = (): IEnvConfig => {
@@ -25,6 +30,9 @@ const loadEnvVariables = (): IEnvConfig => {
     "EMAIL_FROM",
     "EMAIL_FROM_NAME",
     "CLIENT_URL",
+    "CLOUDINARY_CLOUD_NAME",
+    "CLOUDINARY_API_KEY",
+    "CLOUDINARY_API_SECRET",
   ];
 
   requiredEnvVars.forEach((key) => {
@@ -43,6 +51,11 @@ const loadEnvVariables = (): IEnvConfig => {
     EMAIL_FROM: process.env.EMAIL_FROM as string,
     EMAIL_FROM_NAME: process.env.EMAIL_FROM_NAME as string,
     CLIENT_URL: process.env.CLIENT_URL as string,
+    CLOUDINARY: {
+      CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME as string,
+      CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY as string,
+      CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET as string,
+    },
   };
 };
 
