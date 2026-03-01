@@ -17,6 +17,8 @@ interface IEnvConfig {
     CLOUDINARY_API_KEY: string;
     CLOUDINARY_API_SECRET: string;
   };
+  ARCJET_KEY: string;
+  ARCJET_ENV: string;
 }
 
 const loadEnvVariables = (): IEnvConfig => {
@@ -33,6 +35,8 @@ const loadEnvVariables = (): IEnvConfig => {
     "CLOUDINARY_CLOUD_NAME",
     "CLOUDINARY_API_KEY",
     "CLOUDINARY_API_SECRET",
+    "ARCJET_KEY",
+    "ARCJET_ENV",
   ];
 
   requiredEnvVars.forEach((key) => {
@@ -56,6 +60,8 @@ const loadEnvVariables = (): IEnvConfig => {
       CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY as string,
       CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET as string,
     },
+    ARCJET_KEY: process.env.ARCJET_KEY as string,
+    ARCJET_ENV: process.env.ARCJET_KEY as string,
   };
 };
 
