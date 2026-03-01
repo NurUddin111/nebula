@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import User from "../models/User";
 import bcrypt from "bcryptjs";
 import { generateToken } from "../../lib/utils";
-import { JwtPayload } from "jsonwebtoken";
 import { sendWelcomeEmail } from "../utils/emailHandler";
 import { envVars } from "../config/env";
 import cloudinary from "../../lib/cloudinary";
